@@ -21,7 +21,8 @@ passport.use(
 		{
 			clientID: keys.googleClientID,
 			clientSecret: keys.googleClientSecret,
-			callbackUR: '/auth/google/callback'
+			callbackUR: '/auth/google/callback',
+			proxy: true
 		}, 
 		(accessToken, refreshToken, profile, done) => {
 			User.findOne({ googleID: profile.id })
@@ -32,7 +33,7 @@ passport.use(
 					} else {
 						//we don't have a user record with this ID, make a new record!
 						new User({ googleID: profile.id})
-							.save();
+							.save()
 							.then(user => done(null, user));
 					}
 				})
