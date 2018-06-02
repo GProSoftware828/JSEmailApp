@@ -1,0 +1,12 @@
+//runs inside the DB so don't pull entire batch for each single query
+//jnakjdnv@example.com
+//choice = 'yes' || 'no';
+Survey.findOne({
+	id: surveyId,
+	recipients: {
+		$elemMatch { email, responded: false }
+	}
+}, {
+	$inc: { [choice: 1] },
+	$set: { 'recipients.$.repsponded': true }
+})
