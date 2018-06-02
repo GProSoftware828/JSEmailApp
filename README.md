@@ -24,7 +24,7 @@ I stopped building this application when, using mLab.com for the Mongo DB, mLab 
 
 ### **General-**
 
-The application sits on top of Google+ to allow users to create an account by signing in with their Google profile. The user is tracked using (res, req) route handlers that I hardcoded into the app as part of Passport. That is the general theme of this application, we harcode all the paths for the data transfer among the different uses of Mongo in a myraid of restful endpoints, but then Passport also adds a state to the application for authorization. Since Mongo only has up to 4 mB of storage per database, I would have engineered around the limitations on the email databases for the analytics and survey size limits with route handler code, but I stopped building when mLab didn't respond to me.
+The application sits on top of Google+ to allow users to create an account by signing in with their Google profile. The user is tracked using (res, req) route handlers that I hardcoded into the app as part of Passport. That is the general theme of this application, I hardcode all the paths for the data transfer among the different uses of Mongo in a myraid of restful endpoints, but then Passport also adds a state to the application for authorization. Since Mongo only has up to 4 mB of storage per database, I would have engineered around the limitations on the email databases for the analytics and survey size limits with route handler code, but I stopped building when mLab didn't respond to me.
 
 ### **Example-**
 
